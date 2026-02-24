@@ -1,4 +1,4 @@
-# RouteMinds
+# Railway Traffic Management System
 
 Prototype of an AI-based Section Controller for Railway Traffic Management
 
