@@ -219,9 +219,9 @@ def get_platform_queues(trains_df, platforms_df):
 
 # --- Load Data ---
 BASE_DIR = os.getcwd()
-trains_file = os.path.join(BASE_DIR, "trains.csv")
-platforms_file = os.path.join(BASE_DIR, "platform_dataset.csv")
-overrides_file = os.path.join(BASE_DIR, "queued_overrides.csv")
+trains_file = os.path.join(BASE_DIR, "data/trains.csv")
+platforms_file = os.path.join(BASE_DIR, "data/platform_dataset.csv")
+overrides_file = os.path.join(BASE_DIR, "data/queued_overrides.csv")
 
 # Create dummy files if they don't exist
 if not os.path.exists(trains_file):
@@ -291,7 +291,7 @@ if st.session_state.pending_platform is not None:
     st.warning("⚠ Platform availability changes detected! Apply changes?")
     col1, col2 = st.columns(2)
     if col1.button("Agree - Apply Changes"):
-        st.session_state.pending_platform.to_csv(os.path.join(BASE_DIR, "platform_dataset.csv"), index=False)
+        st.session_state.pending_platform.to_csv(os.path.join(BASE_DIR, "data/platform_dataset.csv"), index=False)
         st.session_state.platform_original = st.session_state.pending_platform["Is_Available"].copy()
         st.session_state.pending_platform = None
         st.session_state.platforms_sidebar = st.session_state.pending_platform.copy()

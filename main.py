@@ -149,8 +149,8 @@ def run_simulation(trains_filepath, platforms_filepath, df_trains_updated):
 
 # --- Main execution block ---
 if __name__ == "__main__":
-    train_data_file = "trains.csv"
-    platform_data_file = "platform_dataset.csv"
+    train_data_file = "data/trains.csv"
+    platform_data_file = "data/platform_dataset.csv"
 
     try:
         df_trains_original = pd.read_csv(train_data_file)
